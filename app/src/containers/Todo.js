@@ -10,9 +10,9 @@ import { connect } from 'react-redux'
 import { addTodo, clickTodo, changeFilter, VisibilityFilters } from '../actions'
 import AddTodo from '../components/AddTodo'
 import TodoList from '../components/TodoList'
-import Footer from '../components/Footer'
+import Filter from '../components/Filter'
 
-class App extends Component<{}> {
+class Todo extends Component<{}> {
   render() {
     const { dispatch, visibleTodos, selectedFilter } = this.props;
     return (
@@ -24,6 +24,10 @@ class App extends Component<{}> {
           <AddTodo
             onAddClick={text => dispatch(addTodo(text))}
           />
+          <Filter
+            filter={selectedFilter}
+            onClick={filter => dispatch(changeFilter(filter))}
+          />
         </View>
         <View style={styles.todolist}>
           <ScrollView>
@@ -32,12 +36,6 @@ class App extends Component<{}> {
               onClick={index => dispatch(clickTodo(index))}
             />
           </ScrollView>
-        </View>
-        <View style={styles.footer}>
-          <Footer
-            filter={selectedFilter}
-            onClick={filter => dispatch(changeFilter(filter))}
-          />
         </View>
       </View>
     );
@@ -53,22 +51,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   addTodo: {
-    marginTop: 20,
+    marginTop: 65,
+    width: '100%',
     flex: 2,
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
   },
   todolist: {
     width: '100%',
-    flex: 8,
-    backgroundColor: 'yellow',
-  },
-  footer: {
-    width: '100%',
-    flex: 1,
-    backgroundColor: 'gray',
+    flex: 7,
+    borderColor: 'gray',
+    borderWidth: 1,
+    // backgroundColor: 'yellow',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 15,
     textAlign: 'center',
     margin: 10,
   },
@@ -93,4 +89,4 @@ function select(state) {
   }
 }
 
-export default connect(select)(App);
+export default connect(select)(Todo);

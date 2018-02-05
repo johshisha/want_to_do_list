@@ -4,7 +4,7 @@ import Button from 'react-native-button';
 
 import { VisibilityFilters } from '../actions';
 
-export default class Footer extends Component<[]> {
+export default class Filter extends Component<[]> {
   _renderFilter = (filter, name) => {
     if (filter == this.props.filter) {
       return (
@@ -37,7 +37,7 @@ export default class Footer extends Component<[]> {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: 50,
+    height: 30,
   },
   filterContainer: {
     flexDirection: 'row',

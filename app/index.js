@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, View } from 'react-native';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import App from './src/containers/App';
+import App from './src/App';
 import todoApp from './src/reducers';
 
 let store = createStore(todoApp);
