@@ -8,8 +8,8 @@ import {
 } from 'react-native-router-flux';
 
 import Todo from './containers/Todo';
+import RegisteredTodo from './containers/RegisteredTodo';
 import TabIcon from './components/tabicon';
-import PageA from './components/PageA';
 import SelectableListScene from './components/SelectableListScene';
 
 export default class App extends Component<[]> {
@@ -22,8 +22,8 @@ export default class App extends Component<[]> {
             tabBarStyle={styles.tabBar}
             tabSceneStyle={{flex: 10}}
           >
-            <Scene key="todo" initial component={Todo} title="Todo" icon={TabIcon} />
-            <Scene key="pageA" component={PageA} title="PageA" icon={TabIcon} />
+            <Scene key="add" initial component={Todo} title="Add Todo" icon={TabIcon} />
+            <Scene key="registered" component={RegisteredTodo} title="Registered Todo" icon={TabIcon} />
           </Scene>
           <Scene
             key="selectableList"
