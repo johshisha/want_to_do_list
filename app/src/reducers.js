@@ -13,14 +13,18 @@ function filters(state = VisibilityFilters.SHOW_ALL, action) {
 function todos(state = [], action) {
   switch (action.type) {
     case ADD_TODO:
-      if (action.text.length < 1) {
+      if (action.data.text.length < 1) {
         return state
       }
       return [
         ...state,
         {
-          text: action.text,
-          completed: false
+          text: action.data.text,
+          minDay: action.data.minDay,
+          maxDay: action.data.maxDay,
+          minPerson: action.data.minPerson,
+          maxPerson: action.data.maxPerson,
+          completed: false,
         }
       ]
     case CLICK_TODO:

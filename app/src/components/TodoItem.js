@@ -3,9 +3,13 @@ import { Text, View, StyleSheet } from 'react-native';
 
 export default class TodoItem extends Component<[]> {
   render() {
-    const { text, completed, onClick } = this.props;
+    const { text, minDay, maxDay, minPerson, maxPerson, completed, onClick } = this.props;
     return (
-      <Text onPress={onClick} style={completed ? styles.doneItemText : styles.itemText}>{text}</Text>
+      <View>
+        <Text onPress={onClick} style={completed ? styles.doneItemText : styles.itemText}>{text}</Text>
+        <Text>MinDay: {minDay.data}, MaxDay: {maxDay.data}</Text>
+        <Text>minPerson: {minPerson.data}, maxPerson: {maxPerson.data}</Text>
+      </View>
     )
   }
 }

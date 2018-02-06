@@ -10,8 +10,8 @@ export const VisibilityFilters = {
 }
 
 // アクション関数
-export function addTodo(text) {
-  return { type: ADD_TODO, text }
+export function addTodo(data) {
+  return { type: ADD_TODO, data }
 }
 
 export function clickTodo(index) {

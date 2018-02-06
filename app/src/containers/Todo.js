@@ -22,7 +22,7 @@ class Todo extends Component<{}> {
             Todoを入力
           </Text>
           <AddTodo
-            onAddClick={text => dispatch(addTodo(text))}
+            onAddClick={data => dispatch(addTodo(data))}
           />
           <Filter
             filter={selectedFilter}
@@ -53,8 +53,7 @@ const styles = StyleSheet.create({
   addTodo: {
     marginTop: 65,
     width: '100%',
-    flex: 2,
-    // backgroundColor: 'red',
+    flex: 7,
   },
   todolist: {
     width: '100%',
